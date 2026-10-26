@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project — Mohamed Hassaan</title>
+  <meta name="description" content="Project by Mohamed Hassaan, architectural engineer.">
+  <script>
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("anim");
+      try { if (sessionStorage.getItem("pt")) document.documentElement.classList.add("entering"); } catch (e) {}
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/lenis.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=42">
+  <link rel="stylesheet" href="assets/css/theme.css?v=59">
+</head>
+<body data-page="project">
+
+<div class="curtain" aria-hidden="true"><span></span></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"><span>View</span></div>
+
+<header class="nav">
+  <a href="index.html" class="brand">MH</a>
+  <ul class="nav-links">
+    <li><a href="index.html"><span data-t="Profile">Profile</span></a></li>
+    <li><a href="index.html#work" class="current"><span data-t="Work">Work</span></a></li>
+    <li><a href="index.html#contact"><span data-t="Contact">Contact</span></a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="index.html#contact" class="status label"><span data-p="status"></span><i></i></a>
+    <a class="pill" data-cv target="_blank" rel="noopener">CV ↗</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<nav class="menu" aria-label="Mobile menu">
+  <a class="big" href="index.html">Profile</a>
+  <a class="big" href="index.html#work">Work</a>
+  <a class="big" href="index.html#contact">Contact</a>
+  <div class="menu-foot">
+    <a class="label" data-cv target="_blank" rel="noopener">View CV ↗</a>
+    <a class="label" data-cv download>Download CV ↓</a>
+    <a class="label" data-mail-href><span data-mail></span></a>
+  </div>
+</nav>
+
+<main id="project"></main>
+
+<div class="viewer" role="dialog" aria-modal="true" aria-label="Sheet viewer">
+  <div class="v-bar">
+    <span class="label v-title"></span>
+    <span class="label v-count"></span>
+    <button class="v-close" aria-label="Close">Close ✕</button>
+  </div>
+  <div class="v-stage"><img alt="" draggable="false"><span class="v-mark" aria-hidden="true"></span></div>
+  <div class="v-thumbs"></div>
+  <button class="v-prev" aria-label="Previous sheet">←</button>
+  <button class="v-next" aria-label="Next sheet">→</button>
+</div>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/js/data.js?v=84"></script>
+<script src="assets/js/core.js?v=53"></script>
+<script src="assets/js/bits.js?v=42"></script>
+<script src="assets/js/project.js?v=42"></script>
+</body>
+</html>

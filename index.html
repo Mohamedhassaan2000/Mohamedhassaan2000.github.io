@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mohamed Hassaan — Architectural Designer</title>
+  <meta name="description" content="Portfolio of Mohamed Hassaan, architectural designer — architectural design, working drawings, interiors and 3D visualization.">
+  <meta property="og:title" content="Mohamed Hassaan — Architectural Designer">
+  <meta property="og:description" content="Architectural design, working drawings, interiors and 3D visualization.">
+  <meta property="og:image" content="assets/img/projects/agyad/01.jpg">
+  <script>
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("anim");
+      try { if (sessionStorage.getItem("pt")) document.documentElement.classList.add("entering"); } catch (e) {}
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/me.jpg?v=3">
+  <link rel="stylesheet" href="assets/vendor/lenis.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=43">
+  <link rel="stylesheet" href="assets/css/theme.css?v=59">
+</head>
+<body data-page="home">
+
+<div class="loader" aria-hidden="true">
+  <div class="loader-top"><span class="label">MH — Portfolio</span><span class="label">Architecture · Interiors · Visualization</span></div>
+  <div>
+    <div class="loader-count">0</div>
+    <div class="loader-bar"><i></i></div>
+  </div>
+</div>
+<div class="curtain" aria-hidden="true"><span></span></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"><span>View</span></div>
+
+<header class="nav nav2">
+  <a href="#top" class="brand2">
+    <b>MH</b>
+    <span><strong>Mohamed Hassaan</strong><small data-p="title"></small></span>
+  </a>
+  <ul class="nav-links nav-pill">
+    <li><a href="#top" class="current"><span data-t="Home">Home</span></a></li>
+    <li><a href="#about"><span data-t="About">About</span></a></li>
+    <li><a href="#work"><span data-t="Projects">Projects</span></a></li>
+    <li><a href="#skills"><span data-t="Skills">Skills</span></a></li>
+    <li><a href="#contact"><span data-t="Contact">Contact</span></a></li>
+  </ul>
+  <div class="nav-right">
+    <a class="btn-white" data-cv download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download CV</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<nav class="menu" aria-label="Mobile menu">
+  <a class="big" href="#top">Home</a>
+  <a class="big" href="#about">About</a>
+  <a class="big" href="#work">Projects</a>
+  <a class="big" href="#skills">Skills</a>
+  <a class="big" href="#contact">Contact</a>
+  <div class="menu-foot">
+    <a class="label" data-cv target="_blank" rel="noopener">View CV ↗</a>
+    <a class="label" data-cv download>Download CV ↓</a>
+    <span class="label accent" data-p="status"></span>
+  </div>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <section class="hero3" id="top">
+    <figure class="hero3-photo" data-hero-photo><img data-p-src="photo" alt="Portrait of Mohamed Hassaan"></figure>
+    <div class="rays-host" id="rays" aria-hidden="true"></div>
+
+    <div class="hero3-inner wrap">
+      <span class="eyebrow" data-hero-in data-p="title"></span>
+      <h1 class="hero3-name" data-blur>Mohamed<br>Hassaan</h1>
+      <p class="hero3-tag" data-hero-in>Designing spaces.<br>Drawing them right.</p>
+      <p class="hero3-intro" data-hero-in data-p="intro"></p>
+      <div class="hero3-actions" data-hero-in>
+        <a href="#work" class="btn-sage" data-star>Explore Projects
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn-outline" data-cv target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>View CV</a>
+      </div>
+      <div class="stats" data-hero-in>
+        <div><b>2024</b><span>Graduated · B.Arch</span></div>
+        <div><span class="stat-text">Architectural Design<br>Working Drawings | 3D Visualization</span></div>
+      </div>
+    </div>
+
+    <a class="feature-card" id="feature-card" data-hero-in data-cursor="view">
+      <div class="fc-img"><img alt="" loading="lazy"></div>
+      <div class="fc-body">
+        <span class="fc-k">Featured project</span>
+        <b class="fc-title"></b>
+        <span class="fc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about3" id="about" data-section>
+    <div class="wrap">
+      <!-- no photo here: it is already in the hero -->
+      <div class="about3-grid">
+        <div class="about3-side">
+          <span class="eyebrow about3-eyebrow">About me</span>
+          <h2 class="h2" data-p="title"></h2>
+          <span class="about3-status"><i></i><span data-p="status"></span></span>
+        </div>
+
+        <div class="about3-text">
+          <p class="about3-lead" data-p="aboutLead"></p>
+          <div class="about3-p" data-p-html="aboutMe"></div>
+        </div>
+      </div>
+
+      <dl class="about3-meta">
+        <div class="m-now">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg>
+          <dt>Now</dt><dd data-p="now"></dd></div>
+        <div class="m-edu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
+          <dt>Education</dt><dd data-p="education"></dd></div>
+        <div class="m-loc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <dt>Based in</dt><dd data-p="location"></dd></div>
+      </dl>
+
+      <div class="about3-skills" id="skills">
+        <span class="eyebrow">My expertise</span>
+        <div class="skill-cards" id="skill-cards"></div>
+        <div class="sw">
+          <span class="eyebrow">Software I use</span>
+          <div class="sw-belt"><div class="sw-track" id="sw-track"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="works3" id="work" data-cat="design" data-section>
+    <span class="glow" aria-hidden="true"></span>
+    <div class="wrap">
+      <div class="works3-head">
+        <div>
+          <span class="eyebrow">My work</span>
+          <h2 class="h2 works3-title">Selected <em>Works</em></h2>
+        </div>
+        <div class="works3-side">
+          <p class="tab-note" id="tab-note"></p>
+          <div class="tabs3" id="tabs" role="tablist" aria-label="Work categories"></div>
+        </div>
+      </div>
+      <div class="bento" id="works"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact3" id="contact" data-section>
+    <div class="wrap c2">
+      <span class="eyebrow">Contact</span>
+      <h2 class="c2-h" aria-label="Let's work together.">
+        <span class="c2-line"><span class="c2-row">Let's work</span></span>
+        <span class="c2-line"><span class="c2-row"><em>together.</em></span></span>
+      </h2>
+
+      <!-- email opens a new message to me in Gmail (href set in home.js) -->
+      <div class="c2-actions" data-reveal>
+        <a class="c2-mail" id="c-gmail" target="_blank" rel="noopener" data-magnetic>
+          <svg class="c2-gmail" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M2 6.5v11A1.5 1.5 0 003.5 19H6V10L2 6.5z"/><path fill="#34A853" d="M18 19h2.5a1.5 1.5 0 001.5-1.5v-11L18 10z"/><path fill="#EA4335" d="M6 10V5.5L12 10l6-4.5V10l-6 4.5z"/><path fill="#FBBC04" d="M18 5.5V10l4-3.5V6a1.8 1.8 0 00-2.9-1.4z"/><path fill="#C5221F" d="M2 6v.5L6 10V5.5l-1.1-.9A1.8 1.8 0 002 6z"/></svg>
+          <span class="c2-mail-txt"><small>Email me</small><span data-mail></span></span>
+          <span class="c2-mail-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </a>
+        <a class="btn-sage" data-whatsapp data-magnetic>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>Chat on WhatsApp</a>
+      </div>
+
+      <!-- small links; each word rolls to a copy of itself on hover -->
+      <ul class="c2-links" data-reveal>
+        <li><a id="c-tel"><span class="c2-k">Phone</span><span class="c2-v"><span class="c2-roll" data-p="phone"></span></span></a></li>
+        <li><a data-linkedin target="_blank" rel="noopener"><span class="c2-k">LinkedIn</span><span class="c2-v"><span class="c2-roll">View profile ↗</span></span></a></li>
+        <li id="c-behance"><a target="_blank" rel="noopener"><span class="c2-k">Behance</span><span class="c2-v"><span class="c2-roll">View portfolio ↗</span></span></a></li>
+        <li><span><span class="c2-k">Based in</span><span data-p="location"></span></span></li>
+      </ul>
+    </div>
+    <div class="wrap copyright">
+      <span class="label">© <span id="year"></span> Mohamed Hassaan</span>
+      <span class="label"><span data-p="location"></span> · <span id="clock"></span></span>
+    </div>
+  </section>
+</main>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/js/data.js?v=84"></script>
+<script src="assets/js/core.js?v=53"></script>
+<script src="assets/js/bits.js?v=42"></script>
+<script src="assets/js/home.js?v=53"></script>
+</body>
+</html>
