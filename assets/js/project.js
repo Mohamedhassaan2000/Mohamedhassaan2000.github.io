@@ -1,6 +1,6 @@
 /* Project page: at-a-glance role card, what I did, my work, process, project context, sheet viewer. */
 (() => {
-  const { $, $$, esc, ANIM, split, reveal, magnetic, lenis, ready, start, bind } = window.SITE;
+  const { $, $$, esc, ANIM, split, reveal, magnetic, lenis, ready, start, bind, addLayer, openLayer, closeLayer } = window.SITE;
   const ALL = window.PROJECTS, P = window.PROFILE;
   const pad = n => String(n).padStart(2, "0");
   const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
@@ -157,12 +157,16 @@
     V.classList.add("open");
     lenis?.stop();
     show(i);
+    openLayer();
     if (ANIM) gsap.fromTo(V, { clipPath: "inset(100% 0 0 0)" }, { clipPath: "inset(0% 0 0 0)", duration: .7, ease: "expo.inOut" });
   };
-  const close = () => {
+  const shut = () => {
     const done = () => { V.classList.remove("open"); lenis?.start(); };
     ANIM ? gsap.to(V, { clipPath: "inset(0 0 100% 0)", duration: .6, ease: "expo.inOut", onComplete: done }) : done();
   };
+  // Back on the phone closes the viewer instead of leaving the project
+  addLayer({ isOpen: () => V.classList.contains("open"), close: shut });
+  const close = () => closeLayer(shut);
   $(".v-close", V).onclick = close;
   $(".v-prev", V).onclick = () => show(cur - 1);
   $(".v-next", V).onclick = () => show(cur + 1);

@@ -50,6 +50,19 @@
     else target.scrollIntoView({ behavior: "smooth" });
   };
 
+  // ---------- back button: closes the open menu / viewer, or returns to the previous section,
+  // instead of leaving the site. Each history entry keeps the scroll position to return to. ----------
+  const layers = [];   // { isOpen, close } for the menu and the viewers
+  const remember = () => history.replaceState({ ...history.state, y: scrollY }, "");
+  const openLayer = () => { if (!history.state?.layer) { remember(); history.pushState({ layer: 1 }, ""); } };
+  const closeLayer = close => (history.state?.layer ? history.back() : close());
+  const addLayer = l => layers.push(l);
+  addEventListener("popstate", e => {
+    const open = layers.filter(l => l.isOpen());
+    if (open.length) open.forEach(l => l.close());
+    else if (typeof e.state?.y === "number") scrollTo(e.state.y);
+  });
+
   // nav gets a solid background once the page scrolls
   const nav = $(".nav");
   const onScroll = () => nav?.classList.toggle("solid", scrollY > 40);
@@ -64,9 +77,14 @@
     menuBtn.setAttribute("aria-expanded", open);
     lenis && (open ? lenis.stop() : lenis.start());
   };
-  menuBtn?.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
+  const menuOpen = () => !!menu?.classList.contains("open");
+  addLayer({ isOpen: menuOpen, close: () => setMenu(false) });
+  menuBtn?.addEventListener("click", () => {
+    if (menuOpen()) closeLayer(() => setMenu(false));
+    else { setMenu(true); openLayer(); }
+  });
 
-  // in-page anchors
+  // in-page anchors (each jump is a history step, so Back returns to where you were)
   document.addEventListener("click", e => {
     const a = e.target.closest('a[href^="#"]');
     if (!a) return;
@@ -75,6 +93,10 @@
     if (target === null) return;
     e.preventDefault();
     setMenu(false);
+    const y = target === 0 ? 0 : Math.round(target.getBoundingClientRect().top + scrollY);
+    // a jump from the open menu takes over the menu's history entry
+    if (history.state?.layer) history.replaceState({ y }, "");
+    else { remember(); history.pushState({ y }, ""); }
     scrollTo(target);
   });
 
@@ -207,15 +229,17 @@
     const done = () => { cvBox.classList.remove("open"); lenis?.start(); };
     ANIM ? gsap.to(cvBox, { clipPath: "inset(0 0 100% 0)", duration: .55, ease: "expo.inOut", onComplete: done }) : done();
   };
-  $(".cv-close", cvBox).addEventListener("click", closeCV);
-  cvBox.addEventListener("click", e => { if (e.target === cvBox) closeCV(); });
-  addEventListener("keydown", e => { if (e.key === "Escape" && cvBox.classList.contains("open")) closeCV(); });
+  addLayer({ isOpen: () => cvBox.classList.contains("open"), close: closeCV });
+  $(".cv-close", cvBox).addEventListener("click", () => closeLayer(closeCV));
+  cvBox.addEventListener("click", e => { if (e.target === cvBox) closeLayer(closeCV); });
+  addEventListener("keydown", e => { if (e.key === "Escape" && cvBox.classList.contains("open")) closeLayer(closeCV); });
   document.addEventListener("click", e => {
     const a = e.target.closest("a[data-cv]");
     if (!a || a.hasAttribute("download") || !(P.cvPages || []).length) return;
     e.preventDefault();
     setMenu(false);
     openCV();
+    openLayer();
   });
 
   // ---------- page transitions ----------
@@ -279,5 +303,5 @@
     });
   }
 
-  window.SITE = { $, $$, esc, ANIM, FINE, lenis, split, reveal, magnetic, bind, ready, scrollTo, start };
+  window.SITE = { $, $$, esc, ANIM, FINE, lenis, split, reveal, magnetic, bind, ready, scrollTo, start, addLayer, openLayer, closeLayer };
 })();
